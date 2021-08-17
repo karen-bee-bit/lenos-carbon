@@ -1,0 +1,16 @@
+// Funciones auxiliares de activos de Mincer
+//
+// Esto debe importarse a un archivo .css.ejs.scss.
+// Luego, <%%>: las interpolaciones serán analizadas como cadenas por Sass y evaluadas por EJS después de la compilación de Sass. 
+
+
+@function twbs-font-path($path) {
+  
+  @return "<%- asset_path('#{$path}'.replace(/[#?].*$/, '')) + '#{$path}'.replace(/(^[^#?]*)([#?]?.*$)/, '$2') %>";
+}
+
+@function twbs-image-path($file) {
+  @return "<%- asset_path('#{$file}') %>";
+}
+
+$bootstrap-sass-asset-helper: true;
